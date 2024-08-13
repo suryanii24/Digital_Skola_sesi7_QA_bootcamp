@@ -1,0 +1,1 @@
+# Digital_Skola_sesi7_QA_bootcamp
