@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-19T06:55:34.882Z",
+    "end": "2024-08-19T06:55:37.100Z",
+    "duration": 2218,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d91f5e6-e9e1-48fe-b551-def967a17c43",
+      "title": "",
+      "fullFile": "E:\\Tugas Suryani\\Digital Skola QA Engineer\\Sesi 7\\Digital_Skola_sesi7_QA_bootcamp\\test\\test_demoAPI.js",
+      "file": "\\test\\test_demoAPI.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4fc8df49-88df-461c-9f4f-9a1b3386e04d",
+          "title": "API Test for \"reqres-in\"",
+          "fullFile": "E:\\Tugas Suryani\\Digital Skola QA Engineer\\Sesi 7\\Digital_Skola_sesi7_QA_bootcamp\\test\\test_demoAPI.js",
+          "file": "\\test\\test_demoAPI.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test - GET All Object",
+              "fullTitle": "API Test for \"reqres-in\" Test - GET All Object",
+              "timedOut": false,
+              "duration": 745,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n.get(\"unknown\")\n\n       \n//assertion\nassert.equal(response.statusCode,200);\nassert.equal(response.body.data[0].name, \"cerulean\");\nassert.equal(response.body.data[1].color, \"#C74375\");\n\nconst schemaPath = \"resources/jsonSchema/get-object-schema.json\"\nconst jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\nassert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "120fc6c8-134b-4e87-b9c0-6c1c4b3457df",
+              "parentUUID": "4fc8df49-88df-461c-9f4f-9a1b3386e04d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - POST Store Object",
+              "fullTitle": "API Test for \"reqres-in\" Test - POST Store Object",
+              "timedOut": false,
+              "duration": 485,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const Body = {\n          \"name\": \"morpheus\",\n          \"job\": \"leader\"\n      }\n      const response = await request(BASE_URL)\n      .post(\"users\")\n      .send(Body) \n      \n      //assertion\n      assert.equal(response.statusCode,201);\n      assert.equal(response.body.name, \"morpheus\");\n      assert.equal(response.body.job, \"leader\");\n      assert.isString(response.body.id);\n      const schemaPath = \"resources/jsonSchema/post-object-schema.json\"\n      const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n      assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "75ce7058-e518-4799-bc58-f630cca6e911",
+              "parentUUID": "4fc8df49-88df-461c-9f4f-9a1b3386e04d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - DELETE All Object",
+              "fullTitle": "API Test for \"reqres-in\" Test - DELETE All Object",
+              "timedOut": false,
+              "duration": 495,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await request(BASE_URL)\n.delete(\"users/2\")\n               \n//assertion\nassert.equal(response.statusCode,204);",
+              "err": {},
+              "uuid": "eff28db3-0ebe-4640-a315-ed9afd21f748",
+              "parentUUID": "4fc8df49-88df-461c-9f4f-9a1b3386e04d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - PUT Store Object",
+              "fullTitle": "API Test for \"reqres-in\" Test - PUT Store Object",
+              "timedOut": false,
+              "duration": 471,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const Body = {\n          \"name\": \"morpheus\",\n          \"job\": \"zion resident\"\n      }\n      const response = await request(BASE_URL)\n      .put(\"users/2\")\n      .send(Body) \n      \n      //assertion\n      assert.equal(response.statusCode,200);\n      assert.equal(response.body.name, \"morpheus\");\n      assert.equal(response.body.job, \"zion resident\");\n      assert.isString(response.body.updatedAt, \"2024-08-19T06:33:48.770Z\");\n      const schemaPath = \"resources/jsonSchema/put-object-schema.json\"\n      const jsonSchema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'))\n      assert.jsonSchema(response.body, jsonSchema)",
+              "err": {},
+              "uuid": "15e4c4b4-91f3-486a-b029-bf820c44ff30",
+              "parentUUID": "4fc8df49-88df-461c-9f4f-9a1b3386e04d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "120fc6c8-134b-4e87-b9c0-6c1c4b3457df",
+            "75ce7058-e518-4799-bc58-f630cca6e911",
+            "eff28db3-0ebe-4640-a315-ed9afd21f748",
+            "15e4c4b4-91f3-486a-b029-bf820c44ff30"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2196,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.7.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
